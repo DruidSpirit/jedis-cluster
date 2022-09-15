@@ -1,0 +1,10 @@
+# 基础镜像
+FROM 23d35e2be72f
+# 作者信息
+LABEL maintainer="844748188@qq.com"
+# 开放端口
+#EXPOSE 8081
+# 将 /target 目录下的 jedis-cluster.jar 复制到 docker 中
+ADD target/jedis-cluster.jar jedis-cluster.jar
+# 容器执行命令
+ENTRYPOINT ["java", "-jar", "jedis-cluster.jar"]
